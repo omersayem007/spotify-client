@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
+body {
+  background-color: #323030;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  background-color: #c0392b;
+  width: 100%;
+  height: 60px;
+}
+.header:after {
+  position: absolute;
+  right: 75px;
+  line-height: 60px;
+  content: "Search ";
+  color: #F2F2F2;
+  font-size: 20px;
+  font-weight: 400;
+}
+.header #search svg:hover, .header #search.active > svg {
+  fill: #F2F2F2;
+}
+.header #search > svg {
+  fill: #B2AFAF;
+  position: absolute;
+  height: 36px;
+  width: 36px;
+  top: 12px;
+  right: 25px;
+}
+
+.content {
+  width: calc(100% - 120px);
+  margin: 0 auto;
+  height: 200px;
+}
+.content .box {
+  background-color: #F2F2F2;
+  width: 30%;
+  height: 100%;
+  float: left;
+  margin: 10px calc(10% / 6);
+}
+
+/* Searchbox relevant style */
+#searchbox {
+  position: relative;
+  background: #F2F2F2;
+  width: calc(100% - 120px);
+  margin: 20px auto;
+  overflow: hidden;
+  height: 0px;
+}
+#searchbox.show {
+  animation: reveal-search ease .75s forwards;
+  height: 80px;
+}
+#searchbox.hide {
+  animation: hide-search ease .25s forwards;
+}
+#searchbox svg {
+  margin: auto 0;
+  position: absolute;
+  height: 50px;
+  fill: #B2AFAF;
+  top: 0;
+  bottom: 0;
+}
+#searchbox svg.magnify {
+  left: 20px;
+  right: 0;
+  fill: #B2AFAF;
+}
+#searchbox svg.close {
+  right: 10px;
+}
+#searchbox svg.close:hover {
+  cursor: pointer;
+}
+#searchbox input {
+  width: calc(100% - 160px);
+  line-height: 80px;
+  font-size: 30px;
+  max-height: 90px;
+  border: 0;
+  padding: 0 2vw;
+  font-weight: 300;
+  color: #B2AFAF;
+  padding-left: 80px;
+  background: transparent;
+}
+#searchbox input:focus {
+  outline: 0;
+}
+#searchbox input:-moz-placeholder {
+  color: #bfbfbf;
+}
+#searchbox input::-moz-placeholder {
+  color: #bfbfbf;
+}
+#searchbox input:-ms-input-placeholder {
+  color: #bfbfbf;
+}
+#searchbox input::-webkit-input-placeholder {
+  color: #bfbfbf;
+}
+
+@keyframes reveal-search {
+  0% {
+    height: 0;
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+  50% {
+    height: 80px;
+    -moz-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+  100% {
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+  }
+}
+@keyframes hide-search {
+  0% {
+    height: 80px;
+    -moz-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+  }
+  100% {
+    height: 0;
+    -moz-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+  }
+}

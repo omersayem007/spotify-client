@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import Tracks from './childComponent/Tracks';
+import Tracks from '../childComponent/Tracks';
+import '../../style/CardStyle.css';
+import '../musicPlayer/PlayerArt';
+import PlayerArt from '../musicPlayer/PlayerArt';
 
 class App extends Component {
 
@@ -13,7 +16,7 @@ class App extends Component {
 
     const tracks = this.props.tracks.map((track)=>(
 
-        <Tracks
+        <PlayerArt
            
             image={track.album.images[0].url}
              trackName={track.name}
@@ -26,10 +29,17 @@ class App extends Component {
 
     return (
       <div>
+        <div className="container">
+        <div className="cards">
 
-           {tracks}
+        {tracks}
         
+        </div>
+                            
+        
+      </div> 
       </div>
+                              
     );
   }
 }

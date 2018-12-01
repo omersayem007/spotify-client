@@ -1,38 +1,33 @@
 import React, { Component } from 'react';
-
+import Player from '../musicPlayer/PlayerArt';
+import '../../style/CardStyle.css';
 
 class Tracks extends Component {
 
   render() {
-    return (
-          <div className="card">
-  <div className="card-image">
-    <figure className="image is-3by1">
-      <img src={this.props.image} alt="piture"/>>
-    </figure>
-  </div>
-  <div className="card-content">
-    <div className="media">
-      <div className="media-left">
-        <figure className="image is-48x48">
-          
-        </figure>
-      </div>
-      <div className="media-content">
-        <p className="title is-4">{this.props.trackName}</p>
-        <p className="subtitle is-6"><a href={this.props.previewUrl}>{this.props.previewUrl}</a></p>
-      </div>
-    </div>
 
-    <div className="content">
-      
-      <br/>
-      
-    </div>
-  </div>
-</div>
+    return (
+
+   
+      <a className="card" href="">
+         <Player
+      previewUrl={this.props.previewUrl}   
+      />
+                    
+           {/* <span className="card-header" style={{backgroundImage: 'url(http://placeimg.com/400/200/animals)'}}>
+                 <span className="card-title">
+                   <h3>This is a title for a card</h3>
+                 </span>
+               </span>
+               <span className="card-summary">
+                  A summary will also be present. Usually two to three brief sentences about the content on the detail page.
+                </span>
+               <span className="card-meta">
+                    Published: June 18th, 2015
+                 </span>  */}
+            </a>
     );
-  }
+}
 }
 
 export default Tracks;
